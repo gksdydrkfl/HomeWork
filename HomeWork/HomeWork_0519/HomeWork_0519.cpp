@@ -30,18 +30,26 @@ void TrimDelete(char* _string)
         return;
     }
 
-    int Count = 0;
-    char* ch = {};
-    while (_string[Count])
-    {
-        if (_string[Count] != ' ')
-        {
-            ch[Count] = _string[Count];
-        }
-        ++Count;
-    }
+    int Count1 = 0;
+    int Count2 = 0;
+    char ch[256] = {};
 
-    return;
+    while (_string[Count1])
+    {
+        if (_string[Count1] != ' ')
+        {
+            ch[Count2] = _string[Count1];
+            ++Count2;
+        }
+        ++Count1;
+    }
+    Count1 = 0;
+    while (ch[Count1])
+    {
+        _string[Count1] = ch[Count1];
+        ++Count1;
+    }
+    _string[Count1] = 0;
 }
 
 int DigitsCount(int _Number)
@@ -73,42 +81,56 @@ void StrCopy(const char* const _Left, char* _Right)
 int NumberToString(int _Number, char* _Right)
 {
     //48
-    
-    _Right[0] = _Number + 48;
+    int Count = 0;
+    int n = _Number;
+    int m = 1;
+    while (n = n / 10)
+    {
+        ++Count;
+        m *= 10;
+    }
+
+    n = _Number;
+
+    for (int i = 0; i <= Count; ++i)
+    {
+        int Quotient = n / m;
+        _Right[i] = (char)(Quotient + 48);
+
+        n = n - Quotient * m;
+        m = m / 10;
+    }
+
     return 0;
 }
 
 int main()
 {
     {
-        //int Result = ChCount("ab aaa ccc ddd eee", 0);
-        //std::cout << Result;
+        int Result = ChCount("ab aaa ccc ddd eee", 'a');
+        std::cout << Result << std::endl;
     }
     {
-        //char Arr[256] = "aa  b  c dd ee";
-        //TrimDelete(Arr);
+        char Arr[256] = "aa  b  c dd ee";
+        TrimDelete(Arr);
 
-        ////Arr "aabcddee";
-        //std::cout << Arr;
+        //Arr "aabcddee";
+        std::cout << Arr << std::endl;
     }
     {
-        //int Result = DigitsCount(123456789);
-        //std::cout << Result;
+        int Result = DigitsCount(123456789);
+        std::cout << Result << std::endl;
     }
     {
-        //char ArrCopyText[256] = {};
-        //StrCopy("aaaa bbb ccc", ArrCopyText);
-        //std::cout << ArrCopyText;
+        char ArrCopyText[256] = {};
+        StrCopy("1 124 124s", ArrCopyText);
+        std::cout << ArrCopyText << std::endl;
     }
     {
         char Result[256] = {};
 
-        //NumberToString(1231313, Result);
-        NumberToString(255, Result);
-        std::cout << Result;
-        /*char Ch = '0';
-        int Value = 7;
-        char ChConvert = Value + 48;*/
+        NumberToString(123512, Result);
+        std::cout << Result << std::endl;
     }
 }
 
