@@ -35,11 +35,11 @@ void ChangeCh(char* _Arr, char _PrevCh, char _NextCh)
 
 int main()
 {
-    char Arr[100] = "312312321";
+    //char Arr[100] = "312312321";
 
-    int Count = StringCount(Arr);
+    //int Count = StringCount(Arr);
 
-    //char Arr[100] = "aaa bbb ccc";
+    char Arr[100] = "aaa bbb ccc";
 
     ChangeCh(Arr, 'c', 'd');
 }
