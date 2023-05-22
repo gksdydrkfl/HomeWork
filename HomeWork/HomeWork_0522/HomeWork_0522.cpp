@@ -21,11 +21,6 @@ class Player
 
 };
 
-// 몬스터와 플레이어가 서로 한대씩 때리면서
-// 한명이 죽으면 끝납니다.
-// 지금 그걸 그래픽으로 표현할 방법이 없으니까.
-// 글자로 표현하겠습니다.
-
 int StrCount(const char* const _Str)
 {
     int Count = 0;
@@ -72,17 +67,8 @@ void Damage(int& _Hp, int _Att)
 
 int main()
 {
-    // 절차지향 코딩이라고 부르고 
-    // 함수와 변수를 개념에 묶지 않고 데이터로만 보고 처리하는 방식입니다.
-
-    // 컴퓨터 입장에서 본다면
-    // 플레이어의 hp => 인간적인 머릿속에 그린 개념이다.
-    // 컴퓨터적인 측면에서 void Damage(int& _Hp, int _Att)
-    // 플레이어가 몬스터를 때린다.
-    // => 컴퓨터가 보면 그냥 int나 2개 내놔.
-
     int PlayerHp = 200;
-    int PlayerAtt = 100;
+    int PlayerAtt = 10;
     char PlayerName[40] = "fgfdgfdgdfg";
 
     int MonsterHp = 100;
@@ -102,17 +88,24 @@ int main()
 
         // 아무키나 입력할때까지 기다리는 함수
 
-        DamagePrint(PlayerName, MonsterName, PlayerAtt);
+        system("cls");
         Damage(MonsterHp, PlayerAtt);
+        StatusRender(PlayerName, PlayerAtt, PlayerHp);
+        StatusRender(MonsterName, MonsterAtt, MonsterHp);
+        DamagePrint(PlayerName, MonsterName, PlayerAtt);
+
         // MonsterHp -= PlayerAtt;
         _getch();
 
-        DamagePrint(MonsterName, PlayerName, MonsterAtt);
+        system("cls");
         Damage(PlayerHp, MonsterAtt);
+        StatusRender(PlayerName, PlayerAtt, PlayerHp);
+        StatusRender(MonsterName, MonsterAtt, MonsterHp);
+        DamagePrint(MonsterName, PlayerName, MonsterAtt);
 
         _getch();
 
-        if (0 <= PlayerHp || 0 <= MonsterHp)
+        if (0 >= PlayerHp || 0 >= MonsterHp)
         {
             return -1;
         }

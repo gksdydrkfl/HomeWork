@@ -90,8 +90,6 @@ int NumberToString(int _Number, char* _Right)
         m *= 10;
     }
 
-    n = _Number;
-
     for (int i = 0; i <= Count; ++i)
     {
         int Quotient = n / m;
