@@ -13,33 +13,39 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="소스 파일\FightZone">
+      <UniqueIdentifier>{75408af2-8448-412f-a698-89f619e3895e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Monster">
+      <UniqueIdentifier>{05955602-bf6d-48d2-8f15-76f23cbb863e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="소스 파일\Player">
+      <UniqueIdentifier>{06613580-503d-4293-a3a6-b775028049b9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HomeWorkd_0525.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Player.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Monster.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="FightZonecpp.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Player</Filter>
     </ClCompile>
     <ClCompile Include="FightZone.cpp">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\FightZone</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>소스 파일\Monster</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
-      <Filter>소스 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="Monster.h">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\Player</Filter>
     </ClInclude>
     <ClInclude Include="FightZone.h">
-      <Filter>소스 파일</Filter>
+      <Filter>소스 파일\FightZone</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>소스 파일\Monster</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

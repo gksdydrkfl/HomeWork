@@ -128,7 +128,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="FightZone.cpp" />
-    <ClCompile Include="FightZonecpp.cpp" />
     <ClCompile Include="HomeWorkd_0525.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="Player.cpp" />
