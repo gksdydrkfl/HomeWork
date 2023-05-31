@@ -35,10 +35,13 @@ public:
 };
 
 // 리스 이니셜라이저
+                // { x , y  }
 const int4 Left = { -1, 0 };
 const int4 Right = { 1, 0 };
 const int4 Up = { 0, -1 };
 const int4 Down = { 0, 1 };
+
+//arr[10][10]
 
 // Init('*')
 
@@ -94,7 +97,9 @@ protected:
 
 private:
     char BaseCh = ' ';
+    //x = 20  y = 10
     char ArrScreen[YLine][XLine + 1] = {};
+    // ArrScreen[5][5];
 };
 
 class Player
@@ -114,13 +119,23 @@ public:
         return Pos;
     }
 
+
+    //               
     void AddPos(const int4& _Pos)
     {
+
+        // 0, 2       // left
+        // -1, 2
         if (Pos.X + _Pos.X >= XLine || Pos.X + _Pos.X < 0 ||
             Pos.Y + _Pos.Y >= YLine || Pos.Y + _Pos.Y < 0)
         {
             return;
         }
+               
+
+
+        // 2, 2
+        // 1, 2
         Pos += _Pos;
     }
 
@@ -162,6 +177,8 @@ public:
             break;
         }
     }
+
+    //TODO
     void IsWall()
     {
         if (Pos.X > 20)

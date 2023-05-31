@@ -98,6 +98,9 @@ int main()
 
         if (0 != _kbhit())
         {
+
+            //0x0000004E812FEC40
+            //0x0000004E812FEE28
             MainPlayer.Input(&Screen);
 
             // 1000이면 1초입니다.
